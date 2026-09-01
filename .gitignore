@@ -1,0 +1,10 @@
+node_modules/
+package-lock.json
+profile.json
+profile.*.json
+!profile.example.json
+targets/*-letter.json
+make-letters.js
+*.docx
+*.pdf
+watch-seen.json

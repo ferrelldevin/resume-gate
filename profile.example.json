@@ -1,0 +1,7 @@
+{
+  "_comment": "Copy to profile.json (gitignored) and fill in. The generators read the identity block from there so no personal contact data enters the repo — standing-constraints.md, no personal information in artifacts.",
+  "fullName": "FIRST M. LAST",
+  "contactLine": "City, ST  •  <your address here>  •  linkedin.com/in/<handle>",
+  "credentialLine": "U.S. citizen  •  Clearance line, or empty string to omit",
+  "signature": "First M. Last"
+}

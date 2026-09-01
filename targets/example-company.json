@@ -1,0 +1,22 @@
+{
+  "company": "Example Company",
+  "summary": "One or two sentences. Say what you are, what you are targeting, and the single thing from their posting you meet most directly. No claim you could not discuss for five minutes.",
+  "skills": [
+    [
+      "Programming:  ",
+      "Java (object-oriented design, JUnit), Python, JavaScript and Node.js, HTML and CSS"
+    ],
+    [
+      "Environments:  ",
+      "Unix/Linux, Git and GitHub, automated testing and release gates, code review"
+    ],
+    [
+      "AI-assisted development:  ",
+      "directing, reviewing, and verifying agent-built software end to end"
+    ],
+    [
+      "Clearance:  ",
+      "U.S. citizen. DoD Secret clearance, inactive — held 2017–2025, separated Jun 2025; within the reinstatement window and eligible for re-adjudication."
+    ]
+  ]
+}
