@@ -114,8 +114,8 @@ const doc = new Document({
       roleLine("Independent Software Projects — self-directed, AI-assisted", "Jun 2026 – Present"),
       subLine("Personal projects, not employment. I set the requirements, review every change, and gate releases on automated checks."),
       bullet("Built a Node.js pipeline that generates and validates practice materials for two ODU Japanese courses — 37 packs, worksheets, and slide decks delivered to both instructors and revised against faculty review."),
-      bullet("Created a veterans-benefits calculator that turns certified credit hours into training time and payment amounts, every rule cited to the federal regulation it comes from; in review with a VA counselor."),
-      bullet("Developing a mobile companion app (TypeScript, React Native) with an automated quality gate — assertions, compilation, and fixture checks — that must pass before each milestone."),
+      bullet("Created a veterans-benefits calculator that turns certified credit hours into training time and payment amounts, every rule cited to the federal regulation it comes from."),
+      bullet("Built Kurikaeshi, a live spaced-repetition web app for ODU Japanese courses, with an automated check suite that must pass before each release."),
       bullet("Keep a decision log of 150+ dated entries and integrity-checked product manifests, so every release traces back to what was decided and why."),
 
       roleLine("Software Development Apprentice — AllegiantVets (DoD SkillBridge)", "Nov 2024 – Jun 2025"),

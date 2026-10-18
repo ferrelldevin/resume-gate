@@ -30,9 +30,13 @@ Kafka
 active Secret
 active clearance
 MongoDB
-Express"
+Express
+React Native
+re-adjudication
+in review with"
 
-for f in "$DIR"/build-resume*.js "$DIR"/build-coverletter.js; do
+# Targets ship in the document too, so they are scanned like the generators.
+for f in "$DIR"/build-resume*.js "$DIR"/build-coverletter.js "$DIR"/targets/*.json; do
   [ -f "$f" ] || continue
   base=$(basename "$f")
   echo "$FORBIDDEN" | while IFS= read -r term; do

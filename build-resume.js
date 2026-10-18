@@ -119,8 +119,8 @@ const doc = new Document({
       roleLine("Independent Software Projects — self-directed, AI-assisted", "Jun 2026 – Present"),
       subLine("Personal projects, not employment. I set the requirements, review every change, and gate releases on automated checks."),
       bullet("Built a Node.js pipeline that generates and validates practice materials for two ODU Japanese courses — 37 packs, worksheets, and slide decks delivered to both instructors and revised against faculty review."),
-      bullet("Created a veterans-benefits calculator that turns certified credit hours into training time and payment amounts, every rule cited to the federal regulation behind it; in review with a VA counselor."),
-      bullet("Developing a mobile app (TypeScript, React Native) gated by automated checks; maintain a decision log of 150+ dated entries so every release traces to what was decided and why."),
+      bullet("Created a veterans-benefits calculator that turns certified credit hours into training time and payment amounts, every rule cited to the federal regulation behind it."),
+      bullet("Built Kurikaeshi, a live spaced-repetition web app for ODU Japanese courses, released only through automated checks; maintain a decision log of 150+ dated entries so every release traces to what was decided and why."),
 
       roleLine("Software Development Apprentice — AllegiantVets (DoD SkillBridge)", "Nov 2024 – Jun 2025"),
       bullet("Full-time DoD SkillBridge placement — released from unit duties for the final eight months of service — covering front-end and back-end web development (HTML/CSS, JavaScript, Node.js) and concluding with a full-stack capstone; earned the Meta Front-End Developer certification, Jan 2025."),
