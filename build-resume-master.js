@@ -98,7 +98,7 @@ const doc = new Document({
       // ===== Summary =====
       sectionHeading("Summary"),
       bodyText([{
-        text: "Computer science student at Old Dominion University (expected May 2028) after nine years leading U.S. Air Force maintenance teams. Targeting software development internship and junior developer roles — I build AI-assisted tools daily and keep a written record of every decision.",
+        text: "Computer science student at Old Dominion University (expected May 2028) and U.S. Air Force veteran with nine years sustaining the ground equipment behind F-16 flight operations. Targeting software development internship and junior developer roles — I build AI-assisted tools daily and keep a written record of every decision.",
       }]),
 
       // ===== Technical Skills =====
@@ -111,11 +111,11 @@ const doc = new Document({
       // ===== Experience =====
       sectionHeading("Experience"),
 
-      roleLine("Software Developer (Independent Practice) — Workshop", "Jun 2026 – Present"),
-      subLine("Solo practice, AI-assisted; every build is human-directed, reviewed, and gated before release"),
-      bullet("Built a Node.js pipeline that generates and validates Japanese study materials that make learning easier for university students — 37 finished products (practice packs, worksheets, slide decks) in use at Old Dominion University, refined through instructor feedback."),
-      bullet("Created a veterans-benefits calculator that turns certified credit hours into training time and payment amounts, every rule cited to the federal regulation it comes from; now in review with a VA counselor and a campus benefits office."),
-      bullet("Developing a mobile companion app (TypeScript, React Native) with an automated quality gate — assertions, compilation, and fixture checks — that must pass before each milestone."),
+      roleLine("Independent Software Projects — self-directed, AI-assisted", "Jun 2026 – Present"),
+      subLine("Personal projects, not employment. I set the requirements, review every change, and gate releases on automated checks."),
+      bullet("Built a Node.js pipeline that generates and validates practice materials for two ODU Japanese courses — 37 packs, worksheets, and slide decks delivered to both instructors and revised against faculty review."),
+      bullet("Created a veterans-benefits calculator that turns certified credit hours into training time and payment amounts, every rule cited to the federal regulation it comes from."),
+      bullet("Built Kurikaeshi, a live spaced-repetition web app for ODU Japanese courses, with an automated check suite that must pass before each release."),
       bullet("Keep a decision log of 150+ dated entries and integrity-checked product manifests, so every release traces back to what was decided and why."),
 
       roleLine("Software Development Apprentice — AllegiantVets (DoD SkillBridge)", "Nov 2024 – Jun 2025"),
@@ -123,7 +123,7 @@ const doc = new Document({
       bullet("Completed an eight-month program covering front-end and back-end web development, including a full-stack capstone project."),
       bullet("Earned the Meta Front-End Developer certification (Jan 2025)."),
 
-      roleLine("Training Manager — U.S. Air Force", "Jun 2024 – Jun 2025"),
+      roleLine("Training Manager — U.S. Air Force", "Jun 2024 – Nov 2024"),
       subLine("Anchorage, AK"),
       bullet("Ran training operations for a 90-person aircraft maintenance unit, tracking qualifications across four shops."),
       bullet("Built a tracking and reporting tool that flagged overdue training automatically, cutting the backlog from 350 items to 150."),

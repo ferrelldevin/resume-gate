@@ -30,9 +30,13 @@ Kafka
 active Secret
 active clearance
 MongoDB
-Express"
+Express
+React Native
+re-adjudication
+in review with"
 
-for f in "$DIR"/build-resume*.js "$DIR"/build-coverletter.js; do
+# Targets ship in the document too, so they are scanned like the generators.
+for f in "$DIR"/build-resume*.js "$DIR"/build-coverletter.js "$DIR"/targets/*.json; do
   [ -f "$f" ] || continue
   base=$(basename "$f")
   echo "$FORBIDDEN" | while IFS= read -r term; do
@@ -46,13 +50,13 @@ for f in "$DIR"/build-resume*.js "$DIR"/build-coverletter.js; do
 done
 
 # --- Fixture 2: contact details are current --------------------------------------
-# The outlook address and the personal phone number are both retired from these documents.
+# The outlook address and any phone number are retired from these documents.
 for f in "$DIR"/build-resume*.js "$DIR"/build-coverletter.js; do
   [ -f "$f" ] || continue
   base=$(basename "$f")
   grep -Fq "PROFILE.contactLine" "$f" || { fail "$base does not read identity from gitignored profile"; continue; }
   grep -Fq "outlook.com" "$f" && { fail "$base still carries the retired outlook address"; continue; }
-  grep -Fq "724" "$f" && { fail "$base still carries the personal phone number"; continue; }
+  grep -Eq '[0-9]{3}[-. )]+[0-9]{3}[-. ][0-9]{4}' "$f" && { fail "$base carries a phone number"; continue; }
   grep -Fq "PROFILE.fullName" "$f" || { fail "$base does not read name from profile"; continue; }
   pass "$base contact block current"
 done
@@ -68,19 +72,23 @@ for f in "$DIR"/build-resume*.js; do
   fi
 done
 
-# --- Fixture 4: the one-pagers must actually build --------------------------------
+# --- Fixture 4: every generator must actually build ------------------------------
+# Built against profile.example.json so the check runs on a fresh clone with no personal data.
 if command -v node >/dev/null 2>&1; then
   TMP=$(mktemp -d)
-  for f in "$DIR"/build-resume-onepage.js "$DIR"/build-resume-hii.js "$DIR"/build-resume-ipconfigure.js; do
+  BUILT=0
+  for f in "$DIR"/build-resume*.js "$DIR"/build-coverletter.js; do
     [ -f "$f" ] || continue
     base=$(basename "$f")
-    if (cd "$DIR" && node "$base" "$TMP/out.docx" >/dev/null 2>&1); then
+    BUILT=$((BUILT + 1))
+    if (cd "$DIR" && PROFILE=profile.example.json node "$base" "$TMP/out.docx" >/dev/null 2>&1); then
       pass "$base builds"
     else
       fail "$base does not build"
     fi
   done
   rm -rf "$TMP"
+  [ "$BUILT" -gt 0 ] || fail "no generator found to build"
 else
   say "skip  node unavailable; build check not run"
 fi
