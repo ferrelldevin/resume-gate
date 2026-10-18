@@ -29,18 +29,11 @@ which is the whole point of the next section.
 
 ## What the gate could not catch
 
-I ran the output past an independent adversarial reviewer — a separate model, given ground truth
+I ran the output past an independent adversarial reviewer: a separate model, given ground truth
 and told to attack, on the principle that the thing that makes something is the worst judge of it.
-Four rounds:
+It took more than one round to pass. The early rounds found fabricated claims and a clearance not
+marked inactive, and the mechanical gate had passed those same documents.
 
-| Round | Result |
-|---|---|
-| 1 | **FAIL — 14 defects**, including four outright fabrications and a security clearance never marked inactive in ten documents |
-| 2 | **FAIL — 8**, one of them *created by round 1's repair*, plus a 12-month employment gap both earlier passes missed |
-| 3 | **FAIL — 3**, all residue from round 2's fixes — including a `[Date]` placeholder two lines below the `[Company Name]` I had just filled |
-| 4 | **PASS** |
-
-**The mechanical gate passed at every round, including round 1, when four fabrications were live.**
 That is the finding worth keeping. A suite tests what you thought to assert; it has no opinion on
 whether you thought of the right things. Everything real came from the separation between the thing
 that generates and the thing that judges.
@@ -49,11 +42,11 @@ Three lessons I'd carry to any verification problem:
 
 1. **Repair the defect class, not the instance.** Filling `[Company Name]` and walking past `[Date]`
    in the same letterhead is the shape of most incomplete fixes.
-2. **A repair can introduce a worse defect than the one it fixes.** Round 1's fix for an overclaim
-   produced a bigger overclaim. Fixes are not self-verifying.
-3. **A review harness can manufacture defects.** Round 2 flagged `&apos;` as a blocking error; it is
+2. **A repair can introduce a worse defect than the one it fixes.** A fix for one overclaim
+   produced a bigger one. Fixes are not self-verifying.
+3. **A review harness can manufacture defects.** A review round flagged `&apos;` as a blocking error; it is
    a predefined XML entity that Word decodes correctly, and my extractor simply wasn't decoding it.
-   That false positive cost reviewer attention that should have gone to the real 12-month gap.
+   That false positive cost reviewer attention that should have gone to real defects.
 
 ## Layout
 
