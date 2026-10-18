@@ -22,7 +22,7 @@ in the abstract.
 | **Forbidden claims** | Skills the candidate can't currently demonstrate (`C++`, `Kubernetes`, `RAG`, `active clearance`, …) appearing anywhere in a generator | My first draft led with a full-stack capstone I can no longer access or discuss |
 | **Identity from profile** | Name and contact read from a gitignored `profile.json`, never inlined; rejects retired addresses | A privacy hook blocked my first commit — correctly |
 | **Stale graduation year** | A superseded date surviving in any generator | My university profile said 2027 while my resume said 2028; recruiters cross-check |
-| **Builds** | Every generator compiles | Cheap, and it has caught a bad edit |
+| **Builds** | Every generator builds a .docx from `profile.example.json` | Cheap, and it caught that this fixture itself had been pointing at files no longer in the repo |
 
 The gate is deliberately small. It tests what I told it to assert and is worth exactly that much —
 which is the whole point of the next section.
@@ -66,8 +66,9 @@ targets/<company>.json   # per-application summary + skills
 profile.example.json     # copy to profile.json (gitignored) and fill in
 ```
 
-Identity lives in `profile.json`, which is gitignored. Nothing personal is in this repository —
-that is enforced by fixture two, not by me remembering.
+Contact details live in `profile.json`, which is gitignored, and fixture two enforces that rather
+than my memory. The resume text itself (work history, dates, numbers) is in the generators on
+purpose: it is the thing the gate checks.
 
 ## Why a .docx and not HTML
 

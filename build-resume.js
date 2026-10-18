@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const PROFILE = JSON.parse(fs.readFileSync(process.env.PROFILE || path.join(__dirname, "profile.json"), "utf8"));
-// TARGET=rtx builds the RTX-tailored cut from targets/rtx.json. Unset = the general one-pager.
+// TARGET=<company> builds a tailored cut from targets/<company>.json. Unset = the general one-pager.
 const TARGET = process.env.TARGET
   ? JSON.parse(fs.readFileSync(path.join(__dirname, "targets", process.env.TARGET + ".json"), "utf8"))
   : null;
@@ -95,7 +95,7 @@ const doc = new Document({
       }),
 
       // ===== Summary (2 lines, frames the pivot) =====
-      bodyText([{ text: TARGET ? TARGET.summary : "Computer science student at Old Dominion University (expected May 2028) after nine years leading U.S. Air Force maintenance teams. Targeting software development internship and junior developer roles — I build AI-assisted tools daily and keep a written record of every decision." }], { after: 40 }),
+      bodyText([{ text: TARGET ? TARGET.summary : "Computer science student at Old Dominion University (expected May 2028) and U.S. Air Force veteran with nine years sustaining the ground equipment behind F-16 flight operations. Targeting software development internship and junior developer roles — I build AI-assisted tools daily and keep a written record of every decision." }], { after: 40 }),
 
       // ===== Education (above experience — degree is the strongest signal) =====
       sectionHeading("Education"),
@@ -118,7 +118,7 @@ const doc = new Document({
 
       roleLine("Independent Software Projects — self-directed, AI-assisted", "Jun 2026 – Present"),
       subLine("Personal projects, not employment. I set the requirements, review every change, and gate releases on automated checks."),
-      bullet("Built a Node.js pipeline that generates and validates Japanese study materials — 37 finished products (practice packs, worksheets, slide decks) in use at Old Dominion University."),
+      bullet("Built a Node.js pipeline that generates and validates practice materials for two ODU Japanese courses — 37 packs, worksheets, and slide decks delivered to both instructors and revised against faculty review."),
       bullet("Created a veterans-benefits calculator that turns certified credit hours into training time and payment amounts, every rule cited to the federal regulation behind it; in review with a VA counselor."),
       bullet("Developing a mobile app (TypeScript, React Native) gated by automated checks; maintain a decision log of 150+ dated entries so every release traces to what was decided and why."),
 
