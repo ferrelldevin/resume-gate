@@ -1,5 +1,7 @@
 # resume-gate
 
+> Full case study: [devinferrell.com/work/resume-gate](https://devinferrell.com/work/resume-gate/)
+
 A resume generator with a gate that fails the build when the resume claims something I can't defend.
 
 I was writing job applications with AI assistance and noticed the obvious risk: a resume that reads
